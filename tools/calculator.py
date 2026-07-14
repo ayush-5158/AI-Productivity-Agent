@@ -40,17 +40,4 @@ def calculator(expression : str):
     else:
         return f"Unsupported Operator, Supported Operators are [+,-,*,/,//]"
     
-print(calculator.invoke("10 + 20"))
 
-print(calculator.invoke("10 - 5"))
-
-print(calculator.invoke("10 * 6"))
-
-print(calculator.invoke("10 / 2"))
-
-print(calculator.invoke("10 // 3"))
-
-print(calculator.invoke("10 % 3"))
-
-print(calculator.invoke("hello world"))
-print(calculator.invoke("10 +"))

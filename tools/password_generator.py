@@ -30,4 +30,3 @@ numbers and special characters.    """
         password+= char
     return password
 
-print(password_generator.invoke({"length":12}))
