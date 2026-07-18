@@ -1,3 +1,7 @@
+#---------------- This is for terminal CLI version----------------
+
+
+
 from dotenv import load_dotenv
 load_dotenv()
 from rich import print
@@ -6,7 +10,7 @@ from langchain_mistralai import ChatMistralAI
 from tools.calculator import calculator
 from tools.date_and_time import get_date
 from tools.dice_and_coin import dice,coin
-from tools.middle import middleman
+from tools.middle import middle
 from tools.password_generator import password_generator
 from tools.UUID_generator import uuid_generator
 
@@ -20,13 +24,15 @@ Whenever a user's request can be solved using a tool, you MUST use the appropria
 
 Never perform calculations yourself.
 
-Always use the calculator tool for arithmetic.""")
+Always use the calculator tool for arithmetic.""",middleware=middle)
 
 
 while True:
-    query = input("You : ")
+    query = input("You : ").strip()
     if query == 'exit':
         break
+    if not query:
+        continue
     result = agent.invoke(
 
         {"messages":[{"role":"user","content": query}]}
